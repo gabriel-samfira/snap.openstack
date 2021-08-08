@@ -156,7 +156,7 @@ class OpenStackSnap(object):
 
     def __init__(self, config_file):
         with open(config_file, 'r') as config:
-            self.configuration = yaml.load(config)
+            self.configuration = yaml.safe_load(config)
 
     def _patch_env(self, utils, setup):
         '''Add values from snap config to snap_env.
